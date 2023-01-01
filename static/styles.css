@@ -1,0 +1,30 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #058011;
+}
+
+/* Content */
+.player {
+    width: 15%;
+}
+
+.player h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+.number {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: skyblue;
+    color: white;
+    border-radius: 50px;
+    border: 1px solid whitesmoke;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    font-size: 50px;
+}
