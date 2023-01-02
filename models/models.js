@@ -27,6 +27,10 @@ const TeamSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Player'
     }],
+    color: {
+        type: String,
+        required: true,
+    }
 });
 
 module.exports = {

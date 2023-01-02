@@ -5,8 +5,6 @@ const app = express();
 const mongoSanitize = require('express-mongo-sanitize');
 const { Player, Team } = require('./models/models');
 
-// TODO: admin panel for adding players + teams
-
 const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/soccerview';
 mongoose.connect(dbUrl, {useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -23,6 +21,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(mongoSanitize({ replaceWith: '_' }));
+
+// TODO: admin post functionality for adding teams/players
+
+app.get('/admin', async(req, res) => {
+  const teams = await Team.find({}).populate("players");
+  res.render('admin', { teams });
+})
 
 app.get('/', async(req, res) => {
     const players = await Player.find({});

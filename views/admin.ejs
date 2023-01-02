@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Soccerview Admin</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <style> @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap'); </style>
+</head>
+<body>
+    <div>
+        <h1>Teams</h1>
+        <% for(let team of teams) { %>
+            <h1><%= team.name %></h1>
+            <h2>Players</h2>
+            <% for(let player of team.players) { %>
+                <h2><%= player.name %> - <%= player.shirtNumber %></h2>
+            <% } %>
+        <% } %>
+    </div>
+  </body>
+</html>
