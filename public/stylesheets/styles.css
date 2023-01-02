@@ -4,8 +4,28 @@ body {
 }
 
 /* Content */
+#field {
+    z-index: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: absolute;
+    max-width: 75%;
+    left: 0;
+    right: 0;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+
+#ball {
+    width: 2.5%;
+    z-index: 2;
+}
+
 .player {
     width: 15%;
+    z-index: 1;
+    position: absolute;
 }
 
 .player h1 {
