@@ -24,6 +24,15 @@ app.use(mongoSanitize({ replaceWith: '_' }));
 
 // TODO: admin post functionality for adding teams/players
 
+app.post('/save', async(req, res) => {
+  Player.findOneAndUpdate({ 'name': req.body.name }, { 'xPos': req.body.x, 'yPos': req.body.y }, function(error, player) {
+    if(error) {
+      console.log("Could not find player of name ", req.body.name);
+      return;
+    }
+  });
+});
+
 app.get('/admin', async(req, res) => {
   const teams = await Team.find({}).populate("players");
   res.render('admin', { teams });
