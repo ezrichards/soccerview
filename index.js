@@ -27,7 +27,7 @@ app.use(mongoSanitize({ replaceWith: '_' }));
 app.post('/save', async(req, res) => {
   Player.findOneAndUpdate({ 'name': req.body.name }, { 'xPos': req.body.x, 'yPos': req.body.y }, function(error, player) {
     if(error) {
-      console.log("Could not find player of name ", req.body.name);
+      console.log("Could not find player by name: ", req.body.name);
       return;
     }
   });
