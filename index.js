@@ -35,7 +35,8 @@ app.post('/save', async(req, res) => {
 
 app.get('/admin', async(req, res) => {
   const teams = await Team.find({}).populate("players");
-  res.render('admin', { teams });
+  const players = await Player.find({});
+  res.render('admin', { teams, players });
 })
 
 app.get('/', async(req, res) => {

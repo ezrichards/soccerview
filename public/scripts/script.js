@@ -7,11 +7,7 @@ $(function() {
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "/save", true);
             xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify({
-                "name": this.id,
-                "x": finalxPos,
-                "y": finalyPos
-            }));
+            xhr.send(JSON.stringify({ "name": this.id, "x": finalxPos, "y": finalyPos }));
         },
     });
 });
