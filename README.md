@@ -6,6 +6,13 @@ Simply `node index.js` while in the project directory to run.
 
 The site will be available at `https://localhost:8888/` unless a port is otherwise specified in `.env`.
 
+This project can also be ran via the Dockerfile, with the following commands (and a MongoDB instance running):
+```
+cd soccerview
+docker build -t soccerview .
+docker run -dp 8888:8888 soccerview
+```
+
 ## Roadmap
 * Adding preset "lineups"
 * Save/clear functionality, reset positions

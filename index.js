@@ -44,7 +44,7 @@ app.get('/', async(req, res) => {
     res.render('home', { players });
 })
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8888;
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
 })
